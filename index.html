@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YUVA | 3D Animation Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #101114;
+    color: #f4f1eb;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid #303137;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.logo span,
+h1 span {
+    color: #d6a66b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #aaa7a0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d6a66b;
+}
+
+.hero {
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 70px 0;
+}
+
+.tagline,
+.section-label {
+    color: #d6a66b;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #aaa7a0;
+    max-width: 550px;
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 1px solid #d6a66b;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn.primary,
+.btn:hover {
+    background: #d6a66b;
+    color: #17130e;
+}
+
+section {
+    padding: 85px 0;
+    border-top: 1px solid #303137;
+}
+
+h2 {
+    font-size: 43px;
+    margin: 12px 0 25px;
+}
+
+.section-description {
+    color: #aaa7a0;
+    max-width: 500px;
+    font-size: 14px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 25px;
+}
+
+.project-image {
+    background: #24211d;
+    padding: 12px;
+    border: 1px solid #303137;
+}
+
+.project-image img {
+    width: 100%;
+    display: block;
+}
+
+.project-info {
+    background: #181a1f;
+    border: 1px solid #303137;
+    padding: 30px;
+}
+
+.project-info h3 {
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.project-info p {
+    color: #aaa7a0;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tags,
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 20px;
+}
+
+.tag {
+    border: 1px solid #45434a;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #d4cfc6;
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.workflow-card {
+    background: #181a1f;
+    padding: 28px;
+    border: 1px solid #303137;
+    transition: 0.3s;
+}
+
+.workflow-card:hover {
+    transform: translateY(-5px);
+    border-color: #d6a66b;
+}
+
+.workflow-card span {
+    color: #d6a66b;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.workflow-card h3 {
+    margin: 15px 0;
+}
+
+.workflow-card p,
+.about-grid p {
+    color: #aaa7a0;
+    font-size: 14px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.skill {
+    background: #181a1f;
+    border: 1px solid #303137;
+    padding: 11px 15px;
+    font-size: 13px;
+}
+
+footer {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    color: #aaa7a0;
+    font-size: 12px;
+    border-top: 1px solid #303137;
+}
+
+@media (max-width: 768px) {
+    .project-grid,
+    .about-grid,
+    .workflow {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 60vh;
+        padding: 55px 0;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    h1 {
+        font-size: 55px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <nav>
+        <div class="logo">YUVA<span>.</span></div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#project">PROJECT</a>
+            <a href="#process">PROCESS</a>
+            <a href="#about">ABOUT</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div>
+            <div class="tagline">3D ANIMATION PORTFOLIO | YUVA SANKALP</div>
+
+            <h1>
+                Learning to<br>
+                build <span>in 3D.</span>
+            </h1>
+
+            <p>
+                Hello, I'm Yuva. Welcome to my creative space.
+                This portfolio showcases my first Blender project
+                and my beginning journey into 3D design and animation.
+            </p>
+
+            <div class="buttons">
+                <a href="#project" class="btn primary">EXPLORE MY PROJECT</a>
+                <a href="#about" class="btn">ABOUT ME</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="project">
+        <div class="section-label">3D ANIMATION / PROJECT 01</div>
+        <h2>My First 3D Animation.</h2>
+
+        <p class="section-description">
+            My first Blender project: a study workspace with a desk,
+            monitor, lamp and chair.
+        </p>
+
+        <br><br>
+
+        <div class="project-grid">
+            <div class="project-image">
+                <img src="file:///C:/Users/yuva/OneDrive/Documents/PROJECT.jpeg"
+                     alt="My first 3D project: a study workspace">
+            </div>
+
+            <div class="project-info">
+                <div class="section-label">MY FIRST 3D PROJECT</div>
+                <h3>A Study Workspace</h3>
+
+                <p>
+                    This is my first project for the 3D Animation event.
+                    It marks the beginning of my journey in 3D design
+                    and animation.
+                </p>
+
+                <p>
+                    I created this workspace in Blender while learning
+                    how to build and present a 3D scene.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Blender</span>
+                    <span class="tag">3D Modelling</span>
+                    <span class="tag">Materials</span>
+                    <span class="tag">Lighting</span>
+                    <span class="tag">Composition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <div class="section-label">MY CREATIVE PROCESS</div>
+        <h2>How I built it.</h2>
+
+        <p class="section-description">
+            Three simple stages that helped me create my first
+            3D environment.
+        </p>
+
+        <br><br>
+
+        <div class="workflow">
+            <div class="workflow-card">
+                <span>01 — CREATE</span>
+                <h3>Building Objects</h3>
+                <p>
+                    Started with basic shapes to create the desk,
+                    monitor, chair and workspace accessories.
+                </p>
+            </div>
+
+            <div class="workflow-card">
+                <span>02 — STYLE</span>
+                <h3>Adding Materials</h3>
+                <p>
+                    Applied simple colours and materials to give the
+                    objects a recognisable appearance.
+                </p>
+            </div>
+
+            <div class="workflow-card">
+                <span>03 — PRESENT</span>
+                <h3>Scene &amp; Lighting</h3>
+                <p>
+                    Arranged the objects and experimented with lighting
+                    and shadows to present the scene.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-grid">
+            <div>
+                <div class="section-label">ABOUT ME</div>
+                <h2>Every artist<br>starts somewhere.</h2>
+                <p>
+                    I'm Yuva, a student exploring the world of 3D design
+                    and animation. This is my first Blender project, and
+                    I'm using it to learn the fundamentals, experiment
+                    with creativity and improve through practice.
+                </p>
+            </div>
+
+            <div>
+                <div class="section-label">SKILLS EXPLORED</div>
+                <h2 style="font-size:27px">My Current Toolkit</h2>
+
+                <div class="skills">
+                    <span class="skill">Blender Basics</span>
+                    <span class="skill">3D Modelling</span>
+                    <span class="skill">Object Arrangement</span>
+                    <span class="skill">Materials</span>
+                    <span class="skill">Lighting</span>
+                    <span class="skill">Scene Composition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2026 YUVA | 3D ANIMATION PORTFOLIO</span>
+        <span>Made with curiosity and Blender.</span>
+    </footer>
+
+</div>
+</body>
+</html>
